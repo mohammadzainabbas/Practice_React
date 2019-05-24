@@ -1,8 +1,8 @@
 import React from "react";
-import { getMovie, saveMovie } from "../services/fakeMovieService";
-import Form from "./common/form";
 import Joi from "joi-browser";
+import Form from "./common/form";
 import { getGenres } from "./../services/fakeGenreService";
+import { getMovie, saveMovie } from "../services/fakeMovieService";
 
 class MovieForm extends Form {
   state = {
@@ -37,7 +37,7 @@ class MovieForm extends Form {
   };
 
   componentDidMount() {
-    const genres = { ...getGenres() };
+    const genres = getGenres();
     this.setState({ genres });
 
     const movieId = this.props.match.params.id;
@@ -71,7 +71,7 @@ class MovieForm extends Form {
         <h1>Movie Form</h1>
         <form onSubmit={this.onFormSubmit}>
           {this.renderInput("title", "Title")}
-          {this.renderInput("genreId", "Genre", this.state.genres)}
+          {this.renderSelect("genreId", "Genre", this.state.genres)}
           {this.renderInput("numberInStock", "Number in Stock", "number")}
           {this.renderInput("dailyRentalRate", "Rate")}
           {this.renderFormButton("Save")}
