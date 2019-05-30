@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <title>React App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+      class App extends React.Component {
+        handleClick = e => {
+          console.log(e.target);
+        };
+        handleHover = e => {
+          if (e.pageX > 100) {
+            document.documentElement.style.cursor = "pointer";
+          }
+          console.log(e.target, e.pageX);
+        };
+        handleCopy = e => {
+          alert("Try being original for once.!");
+        };
+        render() {
+          return (
+            <div>
+              <h1>Hello</h1>
+              <button onClick={this.handleClick}>Click me</button>
+              <button onMouseOver={this.handleHover}>Hover over me</button>
+              <p onCopy={this.handleCopy}>What do you want ?</p>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+  </body>
+</html>
