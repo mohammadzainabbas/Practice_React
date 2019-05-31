@@ -2,6 +2,23 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
 
+//This intercepts success or error response from the server.
+//Arguments are the function to be called when good or bad response arrives.
+//1st Argument -> Function to be called when successful response arrives.
+//2nd Argument -> Function to be called when error/bad response arrives.
+axios.interceptors.response.use(null, error => {
+  const expectedError =
+    error.response &&
+    error.response.status >= 400 &&
+    error.response.status < 500;
+  //Handling unexpected errors globally.
+  if (!expectedError) {
+    console.log("Logging the error", error);
+    alert("Something failed. Try again in a short while.!");
+  }
+  return Promise.reject(error);
+});
+
 const apiEndPoint = "http://jsonplaceholder.typicode.com/posts";
 class App extends Component {
   state = {
@@ -47,7 +64,7 @@ class App extends Component {
     });
 
     try {
-      await axios.patch(`${apiEndPoint}/${post.id}`, {
+      await axios.patch(`${apiEndPoint}/979${post.id}`, {
         title: post.title
       });
     } catch (ex) {
@@ -67,8 +84,9 @@ class App extends Component {
       posts
     });
     try {
-      // await axios.delete(`${apiEndPoint}/${post.id}`);
-      await axios.delete(apiEndPoint + "/9999");
+      // await axios.delete(apiEndPoint + "/9898" + post.id);
+      await axios.delete(`${apiEndPoint}/${post.id}`);
+      // await axios.delete(apiEndPoint + "/9999");
     } catch (ex) {
       /*
       Type of errors:
@@ -106,12 +124,6 @@ class App extends Component {
       //For expected error -> 404
       if (ex.response && ex.response.status === 404) {
         alert("This post is already been deleted.");
-      } else {
-        //Here, in this app, we only has the above mentioned 404 expected error. Everything else is considered as unexpected error.
-        console.log("Logging the error", ex);
-        alert(
-          "Something failed while deleting the post. Try again in a short while.!"
-        );
       }
       this.setState({
         posts: originalPosts
