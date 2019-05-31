@@ -1,37 +1,22 @@
 import React, { Component } from "react";
-import axios from "axios";
+import { ToastContainer } from "react-toastify";
+import config from "./config.json";
+import http from "./services/httpService";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
-//This intercepts success or error response from the server.
-//Arguments are the function to be called when good or bad response arrives.
-//1st Argument -> Function to be called when successful response arrives.
-//2nd Argument -> Function to be called when error/bad response arrives.
-axios.interceptors.response.use(null, error => {
-  const expectedError =
-    error.response &&
-    error.response.status >= 400 &&
-    error.response.status < 500;
-  //Handling unexpected errors globally.
-  if (!expectedError) {
-    console.log("Logging the error", error);
-    alert("Something failed. Try again in a short while.!");
-  }
-  return Promise.reject(error);
-});
-
-const apiEndPoint = "http://jsonplaceholder.typicode.com/posts";
 class App extends Component {
   state = {
     posts: []
   };
   async componentDidMount() {
-    // const promise = axios.get("http://jsonplaceholder.typicode.com/posts");
+    // const promise = http.get("http://jsonplaceholder.typicode.com/posts");
     // const response = await promise;
 
     // console.log(promise);
     // console.log(response);
 
-    const { data: posts } = await axios.get(apiEndPoint);
+    const { data: posts } = await http.get(config.apiEndPoint);
     this.setState({
       posts
     });
@@ -42,7 +27,7 @@ class App extends Component {
       body: "b"
     };
 
-    const { data: post } = await axios.post(apiEndPoint, obj);
+    const { data: post } = await http.post(config.apiEndPoint, obj);
 
     console.log(post);
     const posts = [post, ...this.state.posts];
@@ -64,7 +49,7 @@ class App extends Component {
     });
 
     try {
-      await axios.patch(`${apiEndPoint}/979${post.id}`, {
+      await http.patch(`${config.apiEndPoint}/${post.id}`, {
         title: post.title
       });
     } catch (ex) {
@@ -84,14 +69,14 @@ class App extends Component {
       posts
     });
     try {
-      // await axios.delete(apiEndPoint + "/9898" + post.id);
-      await axios.delete(`${apiEndPoint}/${post.id}`);
-      // await axios.delete(apiEndPoint + "/9999");
+      // await http.delete(config.apiEndPoint + "/9898" + post.id);
+      await http.delete(`${config.apiEndPoint}/${post.id}`);
+      // await http.delete(config.apiEndPoint + "/9999");
     } catch (ex) {
       /*
       Type of errors:
       1- Expected Errors: ()
-      - Errors that apiEndpoint predict and returns
+      - Errors that config.apiEndpoint predict and returns
       For e.g:
       - If we try to delete a post with an invalid id, the server will return a respond with status code 404 aka Error 404 (not found)
       - If we try to submit a form with an invalid data, on the server the validation fails and we'll get Error 400 (bad request) from the server
@@ -134,6 +119,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        <ToastContainer />
         <button className="btn btn-primary" onClick={this.handleAdd}>
           Add
         </button>
