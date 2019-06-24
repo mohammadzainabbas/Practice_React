@@ -2,6 +2,8 @@
   "name": "drag-and-drop",
   "version": "0.1.0",
   "private": true,
+  "main": "lib/index.js",
+  "module": "lib/es/index.js",
   "dependencies": {
     "@material-ui/core": "^4.1.0",
     "@material-ui/icons": "^4.1.0",
@@ -16,11 +18,22 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide:build": "styleguidist build",
+    "lib:build": "webpack -p --progress && babel src --out-dir lib/es/ --sourceMaps && babel native --out-dir lib/native/ --sourceMaps",
+    "precommit": "pretty-quick --staged",
+    "prepublish": "npm run lib:build"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "peerDependencies": {
+    "react": "15.3.0 - 16.x"
+  },
+  "engines": {
+    "node": ">=7.4.0",
+    "npm": ">=4.0.5"
+  },
+  "sideEffects": false,
   "browserslist": {
     "production": [
       ">0.2%",
