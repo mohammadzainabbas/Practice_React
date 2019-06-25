@@ -5,7 +5,10 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "dog-names": "^1.0.2",
+    "lodash": "^4.17.11",
+    "prop-types": "^15.6.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,6 +35,15 @@
   },
   "devDependencies": {
     "react-styleguidist": "^9.1.10",
-    "webpack": "^4.35.0"
+    "webpack": "^4.35.0",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.1",
+    "file-loader": "^2.0.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0"
   }
 }
