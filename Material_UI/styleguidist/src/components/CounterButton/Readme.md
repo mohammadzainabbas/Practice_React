@@ -1,10 +1,10 @@
 ```js
-import Button from "../Button";
+import NormalButton from "../NormalButton";
 let ref;
 <div>
   <CounterButton ref={r => (ref = r)} />
-  <Button size="small" onClick={() => ref.set(0)}>
+  <NormalButton size="small" onClick={() => ref.set(0)}>
     Reset
-  </Button>
+  </NormalButton>
 </div>;
 ```

@@ -1,50 +1,45 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import "./Button.css";
+import { Button as MuiButton } from "@material-ui/core";
+import { withStyles, MuiThemeProvider } from "@material-ui/core/styles";
+import { styles } from "./styles";
+import Theme from "./../../theme/defaultTheme";
 
 /**
- * The only true button.
+ * A standard button
+ *
+ * @visibleName Button
  */
-export default function Button({ color, size, onClick, disabled, children }) {
-  const styles = {
-    color,
-    fontSize: Button.sizes[size]
-  };
 
+const Button = ({ color, onClick, children, classes }) => {
   return (
-    <button
-      className="button"
-      style={styles}
-      onClick={onClick}
-      disabled={disabled}
-    >
-      {children}
-    </button>
+    <MuiThemeProvider theme={Theme}>
+      <MuiButton
+        variant="contained"
+        color={color}
+        className={classes.button}
+        type="submit"
+        onClick={onClick}
+      >
+        {children}
+      </MuiButton>
+    </MuiThemeProvider>
   );
-}
+};
 Button.propTypes = {
-  /** Button label */
+  /** Button label/text */
   children: PropTypes.node.isRequired,
-  /** The color for the button */
-  color: PropTypes.string,
-  /** The size of the button */
-  size: PropTypes.oneOf(["small", "normal", "large"]),
-  /** Disable button */
-  disabled: PropTypes.bool,
+  /** The color of the button */
+  color: PropTypes.oneOf(["primary", "secondary"]),
   /** Gets called when the user clicks on the button */
   onClick: PropTypes.func
 };
 Button.defaultProps = {
-  color: "#333",
-  size: "normal",
+  color: "primary",
   onClick: event => {
     // eslint-disable-next-line no-console
     console.log("You have clicked me!", event.target);
   }
 };
-Button.sizes = {
-  small: "10px",
-  normal: "14px",
-  large: "18px"
-};
+
+export default withStyles(styles)(Button);
