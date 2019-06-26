@@ -1,27 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button as MuiButton } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
+import { Button } from "@material-ui/core";
+import { withStyles, MuiThemeProvider } from "@material-ui/core/styles";
 import { styles } from "./styles";
+import Theme from "./../../theme/defaultTheme";
+import Send from "@material-ui/icons/Send";
 
 /**
- * The only true button.
+ * A standard button with an icon
  *
  * @visibleName Button with Icon
  */
 
-const IconButton = ({ icon, onClick, children, classes }) => {
+const IconButton = ({ icon, color, onClick, children, classes }) => {
   return (
-    <MuiButton
-      variant="contained"
-      className={classes.button}
-      type="submit"
-      onClick={onClick}
-    >
-      <Icon>{icon}</Icon>
-      {children}
-    </MuiButton>
+    <MuiThemeProvider theme={Theme}>
+      <Button
+        variant="contained"
+        color={color}
+        className={classes.button}
+        type="submit"
+        onClick={onClick}
+      >
+        {/* <Icon fontSize="inherit">send</Icon> */}
+        <Send />
+        {children}
+      </Button>
+    </MuiThemeProvider>
   );
 };
 IconButton.propTypes = {
@@ -35,6 +40,7 @@ IconButton.propTypes = {
   onClick: PropTypes.func
 };
 IconButton.defaultProps = {
+  icon: "input",
   color: "primary",
   onClick: event => {
     // eslint-disable-next-line no-console
