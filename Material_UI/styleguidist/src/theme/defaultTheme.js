@@ -90,10 +90,13 @@ const Theme = createMuiTheme({
           border: "2px solid red"
         }
       }
+    },
+    MuiSvgIcon: {
+      root: {
+        marginRight: 8
+      }
     }
   }
 });
-
-// console.log("Theme", Theme);
 
 export default Theme;
