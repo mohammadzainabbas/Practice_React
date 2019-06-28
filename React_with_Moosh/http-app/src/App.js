@@ -70,7 +70,7 @@ class App extends Component {
     });
     try {
       // await http.delete(config.apiEndPoint + "/9898" + post.id);
-      await http.delete(`${config.apiEndPoint}/${post.id}`);
+      await http.delete(`s${config.apiEndPoint}/${post.id}`);
       // await http.delete(config.apiEndPoint + "/9999");
     } catch (ex) {
       /*
