@@ -18,9 +18,12 @@ const allReducers = combineReducers({
   users: userReducer
 });
 
-const store = createStore(allReducers);
+const store = createStore(allReducers, {
+  products: [{ name: "iPhone" }],
+  users: "M Zain Abbas"
+});
 
-console.log(store.getState());
+// console.log(store.getState());
 
 // const action = {
 //   type: "changeState",
