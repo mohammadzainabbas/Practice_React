@@ -10,7 +10,12 @@ const productReducer = (state = [], action) => {
 };
 
 const userReducer = (state = "", action) => {
-  return state;
+  switch (action.type) {
+    case "updateUser":
+      return action.payload;
+    default:
+      return state;
+  }
 };
 
 const allReducers = combineReducers({
@@ -26,6 +31,15 @@ const store = createStore(
   },
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+
+const updateUserAction = {
+  type: "updateUser",
+  payload: {
+    user: "Mohammad Zain Abbas"
+  }
+};
+
+store.dispatch(updateUserAction);
 
 // console.log(store.getState());
 
