@@ -7,13 +7,15 @@ import { connect } from "react-redux";
 // import { bindActionCreators } from "redux";
 //Actions
 import { updateUser, apiRequest } from "./actions/userActions";
+//Reselectors
+import { createSelector } from "reselect";
 
 class App extends Component {
-  componentDidMount() {
-    setTimeout(() => {
-      this.props.onApiRequest();
-    }, 1500);
-  }
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     this.props.onApiRequest();
+  //   }, 1500);
+  // }
 
   onUpdateUser = ({ target }) => {
     this.props.onUpdateUser(target.value);
@@ -46,13 +48,32 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state, props) => {
-  return {
-    products: state.products,
-    user: state.user,
-    userAndComponentProps: `${state.user} ${props.app_component}`
-  };
-};
+//Product Selector
+const productSelector = createSelector(
+  state => state.products,
+  products => products
+);
+//User Selector
+const userSelector = createSelector(
+  state => state.user,
+  user => user
+);
+
+const mapStateToProps = createSelector(
+  productSelector,
+  userSelector,
+  (products, user) => ({
+    products,
+    user
+  })
+);
+// const mapStateToProps = (state, props) => {
+//   return {
+//     products: state.products,
+//     user: state.user,
+//     userAndComponentProps: `${state.user} ${props.app_component}`
+//   };
+// };
 
 //Allow us to dispatch actions from our components easily (we don't need to use dispatch in components separately). We'll just call functions that automatically dispatch actions to the store
 const mapActionsToProps = {
