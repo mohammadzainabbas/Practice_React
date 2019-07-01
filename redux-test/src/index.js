@@ -5,25 +5,16 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
+import productReducer from "./reducers/productReducer";
+import userReducer from "./reducers/userReducer";
 
-const productReducer = (state = [], action) => {
-  return state;
-};
-
-const userReducer = (state = "", { type, payload }) => {
-  switch (type) {
-    case "updateUser":
-      return payload;
-    default:
-      return state;
-  }
-};
-
+//All reducers
 const allReducers = combineReducers({
   products: productReducer,
   users: userReducer
 });
 
+//Store with initial state
 const store = createStore(
   allReducers,
   {
@@ -33,6 +24,7 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
+//Action to update user
 const updateUserAction = {
   type: "updateUser",
   payload: {
@@ -40,6 +32,7 @@ const updateUserAction = {
   }
 };
 
+//Dispatch functions dispatches the action been passed and updates the store
 store.dispatch(updateUserAction);
 
 // console.log(store.getState());
@@ -53,8 +46,13 @@ store.dispatch(updateUserAction);
 
 // store.dispatch(action);
 
+//Console logging the state in the store
 console.log(store.getState());
 
+//Console logging the enviornment details
+console.log(process.env.NODE_ENV);
+
+//Wrapping our app with Provider (this enable our react app to use/access redux store)
 ReactDOM.render(
   <Provider store={store}>
     <App />
