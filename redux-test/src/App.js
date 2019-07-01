@@ -8,8 +8,8 @@ import { connect } from "react-redux";
 import { updateUser } from "./actions/userActions";
 
 class App extends Component {
-  onUpdateUser = () => {
-    this.props.onUpdateUser("Sammy");
+  onUpdateUser = ({ target }) => {
+    this.props.onUpdateUser(target.value);
   };
   render() {
     console.log(this.props);
@@ -30,7 +30,8 @@ class App extends Component {
           </a>
         </header>
         <div>
-          <button onClick={this.onUpdateUser}>Update User</button>
+          {/* <button onClick={this.onUpdateUser}>Update User</button> */}
+          <input onChange={this.onUpdateUser} />
           <p>{this.props.user}</p>
         </div>
       </div>
