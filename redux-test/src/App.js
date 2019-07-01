@@ -4,11 +4,15 @@ import "./App.css";
 //Connect components to redux store
 import { connect } from "react-redux";
 //To bind actions to props
-import { bindActionCreators } from "redux";
+// import { bindActionCreators } from "redux";
 //Actions
-import { updateUser } from "./actions/userActions";
+import { updateUser, apiRequest } from "./actions/userActions";
 
 class App extends Component {
+  componentDidMount() {
+    this.props.onApiRequest();
+  }
+
   onUpdateUser = ({ target }) => {
     this.props.onUpdateUser(target.value);
   };
@@ -49,23 +53,28 @@ const mapStateToProps = (state, props) => {
 };
 
 //Allow us to dispatch actions from our components easily (we don't need to use dispatch in components separately). We'll just call functions that automatically dispatch actions to the store
-const mapActionsToProps = (dispatch, props) => {
-  return bindActionCreators({ onUpdateUser: updateUser }, dispatch);
+const mapActionsToProps = {
+  onUpdateUser: updateUser,
+  onApiRequest: apiRequest
 };
 
-const mergeProps = (
-  propsFromState, //Props which we return from mapStateToProps
-  propsFromDispatch, //Props which we return from mapActionsToProps
-  ownProps //Props that we pass in
-) => {
-  console.log("Props from state", propsFromState);
-  console.log("Props from dispatch", propsFromDispatch);
-  console.log("Own props", ownProps);
-  return {};
-};
+// const mapActionsToProps = (dispatch, props) => {
+//   return bindActionCreators({ onUpdateUser: updateUser }, dispatch);
+// };
+
+// const mergeProps = (
+//   propsFromState, //Props which we return from mapStateToProps
+//   propsFromDispatch, //Props which we return from mapActionsToProps
+//   ownProps //Props that we pass in
+// ) => {
+//   console.log("Props from state", propsFromState);
+//   console.log("Props from dispatch", propsFromDispatch);
+//   console.log("Own props", ownProps);
+//   return {};
+// };
 
 export default connect(
   mapStateToProps,
-  mapActionsToProps,
-  mergeProps
+  mapActionsToProps
+  // mergeProps
 )(App);
