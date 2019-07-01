@@ -18,10 +18,14 @@ const allReducers = combineReducers({
   users: userReducer
 });
 
-const store = createStore(allReducers, {
-  products: [{ name: "iPhone" }],
-  users: "M Zain Abbas"
-});
+const store = createStore(
+  allReducers,
+  {
+    products: [{ name: "iPhone" }],
+    users: "M Zain Abbas"
+  },
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 // console.log(store.getState());
 
