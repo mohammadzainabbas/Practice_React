@@ -3,7 +3,8 @@ import logo from "./logo.svg";
 import "./App.css";
 //Connect components to redux store
 import { connect } from "react-redux";
-
+//To bind actions to props
+import { bindActionCreators } from "redux";
 //Actions
 import { updateUser } from "./actions/userActions";
 
@@ -48,8 +49,8 @@ const mapStateToProps = (state, props) => {
 };
 
 //Allow us to dispatch actions from our components easily (we don't need to use dispatch in components separately). We'll just call functions that automatically dispatch actions to the store
-const mapActionsToProps = {
-  onUpdateUser: updateUser
+const mapActionsToProps = (dispatch, props) => {
+  return bindActionCreators({ onUpdateUser: updateUser }, dispatch);
 };
 
 export default connect(
