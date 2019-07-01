@@ -10,7 +10,9 @@ import { updateUser, apiRequest } from "./actions/userActions";
 
 class App extends Component {
   componentDidMount() {
-    this.props.onApiRequest();
+    setTimeout(() => {
+      this.props.onApiRequest();
+    }, 1500);
   }
 
   onUpdateUser = ({ target }) => {
