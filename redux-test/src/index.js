@@ -3,26 +3,17 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, compose, combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 import productReducer from "./reducers/productReducer";
 import userReducer from "./reducers/userReducer";
+import thunk from "redux-thunk";
 
 //All reducers
 const allReducers = combineReducers({
   products: productReducer,
   user: userReducer
 });
-
-//Store with initial state
-const store = createStore(
-  allReducers,
-  {
-    products: [{ name: "iPhone" }],
-    user: "M Zain Abbas"
-  },
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
 
 //Action to update user
 const updateUserAction = {
@@ -31,6 +22,22 @@ const updateUserAction = {
     user: "Mohammad Zain Abbas"
   }
 };
+
+//All store enhancers
+const allStoreEnhancers = compose(
+  applyMiddleware(thunk),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+//Store with initial state
+const store = createStore(
+  allReducers,
+  {
+    products: [{ name: "iPhone" }],
+    user: "M Zain Abbas"
+  },
+  allStoreEnhancers
+);
 
 //Dispatch functions dispatches the action been passed and updates the store
 store.dispatch(updateUserAction);
