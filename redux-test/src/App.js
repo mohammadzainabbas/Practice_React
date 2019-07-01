@@ -39,10 +39,13 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  products: state.products,
-  user: state.user
-});
+const mapStateToProps = (state, props) => {
+  return {
+    products: state.products,
+    user: state.user,
+    userAndComponentProps: `${state.user} ${props.app_component}`
+  };
+};
 
 //Allow us to dispatch actions from our components easily (we don't need to use dispatch in components separately). We'll just call functions that automatically dispatch actions to the store
 const mapActionsToProps = {

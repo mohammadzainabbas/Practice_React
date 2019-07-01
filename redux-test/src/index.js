@@ -55,7 +55,7 @@ console.log(process.env.NODE_ENV);
 //Wrapping our app with Provider (this enable our react app to use/access redux store)
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App app_component="Prop from app component" />
   </Provider>,
   document.getElementById("root")
 );
