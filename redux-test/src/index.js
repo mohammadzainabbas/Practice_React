@@ -11,7 +11,7 @@ import userReducer from "./reducers/userReducer";
 //All reducers
 const allReducers = combineReducers({
   products: productReducer,
-  users: userReducer
+  user: userReducer
 });
 
 //Store with initial state
@@ -19,7 +19,7 @@ const store = createStore(
   allReducers,
   {
     products: [{ name: "iPhone" }],
-    users: "M Zain Abbas"
+    user: "M Zain Abbas"
   },
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
