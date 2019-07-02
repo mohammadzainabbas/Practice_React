@@ -1,6 +1,4 @@
-import React from "react";
-
-class Counter extends React.Component {
+class App extends React.Component {
   state = { counter: 0 };
 
   decrement = event => {
@@ -26,7 +24,7 @@ class Counter extends React.Component {
     const self = this;
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
-        .register("../serviceWorker.js")
+        .register("./service-worker.js")
         .then(() => navigator.serviceWorker.ready)
         .then(() => {
           navigator.serviceWorker.addEventListener("message", function(event) {
@@ -55,4 +53,4 @@ class Counter extends React.Component {
   }
 }
 
-export default Counter;
+ReactDOM.render(<App />, document.getElementById("root"));
