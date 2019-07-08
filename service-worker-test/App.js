@@ -29,7 +29,7 @@ class App extends React.Component {
         .then(() => {
           navigator.serviceWorker.addEventListener("message", function(event) {
             if (event.data && event.data.state !== undefined) {
-              self.setState({ counter: event.data.state });
+              self.({ counter: event.data.state });
             }
           });
         })
