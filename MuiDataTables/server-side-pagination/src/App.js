@@ -93,7 +93,7 @@ class App extends React.Component {
       <div>
         <MUIDataTable
           title={
-            <Typography variant="title">
+            <Typography variant="subtitle1">
               ACME Employee list
               {isLoading && (
                 <CircularProgress
