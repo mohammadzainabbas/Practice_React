@@ -84,6 +84,8 @@ class App extends React.Component {
           case "changePage":
             this.changePage(tableState.page);
             break;
+          default:
+            break;
         }
       }
     };
