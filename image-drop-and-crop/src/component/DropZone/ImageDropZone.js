@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Dropzone from "react-dropzone";
-import { AppLogoContext } from "./../../context/appLogoContext";
+import { AppLogoContext } from "../../context/appLogoContext";
 
 const handleDisplayFile = (text, files) => {
 	console.log(text);
