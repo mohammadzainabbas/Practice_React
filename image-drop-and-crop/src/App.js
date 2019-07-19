@@ -1,7 +1,7 @@
 import React from "react";
 import { AppLogoProvider } from "./context/appLogoContext";
 import ImageDropZone from "./component/DropZone/dropZone";
-import StyledDropzone from "./component/DropZone/InLineStyledDropZone";
+import StyledDropzone from "./component/DropZone/UsingStyledComponentStyledDropZone";
 import AppLogo from "./component/AppLogo/appLogo";
 import "./App.css";
 

@@ -39,7 +39,7 @@ const rejectStyle = {
 	borderColor: "#ff1744"
 };
 
-const StyledDropzone = props => {
+const InLineStyledDropzone = props => {
 	let kB = 10;
 	const maxSize = kB * 1024;
 	const {
@@ -75,4 +75,4 @@ const StyledDropzone = props => {
 	);
 };
 
-export default StyledDropzone;
+export default InLineStyledDropzone;
