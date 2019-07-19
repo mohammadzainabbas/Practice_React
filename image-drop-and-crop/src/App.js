@@ -1,17 +1,20 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { AppLogoProvider } from "./context/appLogoContext";
 import ImageDropZone from "./component/DropZone/dropZone";
+import AppLogo from "./component/AppLogo/appLogo";
+import "./App.css";
 
-function App() {
+const App = () => {
 	return (
 		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<ImageDropZone />
-			</header>
+			<AppLogoProvider>
+				<header className="App-header">
+					<AppLogo />
+					<ImageDropZone />
+				</header>
+			</AppLogoProvider>
 		</div>
 	);
-}
+};
 
 export default App;

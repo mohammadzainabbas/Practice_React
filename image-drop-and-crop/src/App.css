@@ -8,6 +8,13 @@
 	pointer-events: none;
 }
 
+.Fast-App-logo {
+	animation: App-logo-spin infinite 0.75s linear;
+	animation-delay: 0.5s;
+	height: 40vmin;
+	pointer-events: none;
+}
+
 .App-header {
 	background-color: #282c34;
 	min-height: 100vh;
