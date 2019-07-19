@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 import Dropzone from "react-dropzone";
+import ReactCrop from "react-image-crop";
+import "react-image-crop/dist/ReactCrop.css";
 
 class ImageDropAndCrop extends Component {
-	state = { imgSrc: null };
+	state = {
+		imgSrc: null,
+		crop: {
+			aspect: 1 / 1
+		}
+	};
 
 	kB = 50;
 	maxSize = this.kB * 1024;
@@ -65,14 +72,22 @@ class ImageDropAndCrop extends Component {
 		}
 	};
 
+	handleOnCropChange = crop => {
+		console.log(crop);
+		this.setState(crop);
+	};
+
 	render() {
-		const { imgSrc } = this.state;
+		const { imgSrc, crop } = this.state;
 		return (
 			<>
 				{imgSrc !== null ? (
 					<div>
-						<h6>Image Source: {imgSrc}</h6>
-						<img src={imgSrc} alt="Preview" />
+						<ReactCrop
+							src={imgSrc}
+							crop={crop}
+							onChange={this.handleOnCropChange}
+						/>
 					</div>
 				) : (
 					<div style={{ cursor: "pointer" }}>
