@@ -1,11 +1,12 @@
 import React from "react";
 import { AppLogoProvider } from "./context/appLogoContext";
-import ImageDropZone from "./component/DropZone/ImageDropZone";
-import StyledDropzone from "./component/DropZone/UsingStyledComponentStyledDropZone";
 import AppLogo from "./component/AppLogo/appLogo";
 import "./App.css";
-import ImageDropAndCrop from "./component/DropZone/ImageDropAndCrop";
-import InLineStyledDropzone from "./component/DropZone/InLineStyledDropZone";
+// import ImageDropZone from "./component/DropZone/ImageDropZone";
+// import StyledDropzone from "./component/DropZone/UsingStyledComponentStyledDropZone";
+// import ImageDropAndCrop from "./component/DropZone/ImageDropAndCrop";
+// import InLineStyledDropzone from "./component/DropZone/InLineStyledDropZone";
+import ImageCropAndPreview from "./component/DropZone/ImageCropAndPreview";
 
 const App = () => {
 	return (
@@ -16,7 +17,8 @@ const App = () => {
 					{/* <ImageDropZone /> */}
 					{/* <StyledDropzone /> */}
 					{/* <InLineStyledDropzone /> */}
-					<ImageDropAndCrop />
+					{/* <ImageDropAndCrop /> */}
+					<ImageCropAndPreview />
 				</header>
 			</AppLogoProvider>
 		</div>
