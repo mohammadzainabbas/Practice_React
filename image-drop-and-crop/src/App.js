@@ -1,6 +1,6 @@
 import React from "react";
 import { AppLogoProvider } from "./context/appLogoContext";
-import AppLogo from "./component/AppLogo/appLogo";
+// import AppLogo from "./component/AppLogo/appLogo";
 import "./App.css";
 // import ImageDropZone from "./component/DropZone/ImageDropZone";
 // import StyledDropzone from "./component/DropZone/UsingStyledComponentStyledDropZone";
@@ -13,7 +13,7 @@ const App = () => {
 		<div className="App">
 			<AppLogoProvider>
 				<header className="App-header">
-					<AppLogo />
+					{/* <AppLogo /> */}
 					{/* <ImageDropZone /> */}
 					{/* <StyledDropzone /> */}
 					{/* <InLineStyledDropzone /> */}
