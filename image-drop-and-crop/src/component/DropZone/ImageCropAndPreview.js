@@ -101,11 +101,27 @@ class ImageCropAndPreview extends Component {
 					/>
 				)}
 				{croppedImageUrl && (
-					<img
-						alt="Crop"
-						style={{ maxWidth: "100%", padding: 10 }}
-						src={croppedImageUrl}
-					/>
+					<div>
+						<img
+							alt="Crop"
+							style={{ maxWidth: "100%", padding: 10 }}
+							src={croppedImageUrl}
+						/>
+						{crop && (
+							<div>
+								<span style={{ padding: 10 }}>
+									Width:
+									{crop.width}
+								</span>
+								<span style={{ padding: 10 }}>
+									Height:
+									{crop.height}
+								</span>
+								<span style={{ padding: 10 }}>X:{crop.x}</span>
+								<span style={{ padding: 10 }}>Y:{crop.y}</span>
+							</div>
+						)}
+					</div>
 				)}
 			</div>
 		);
