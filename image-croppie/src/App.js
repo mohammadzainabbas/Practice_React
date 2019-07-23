@@ -1,12 +1,12 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import ImageZoomCrop from "./component/ImageZoomCrop";
+// import ImageZoomCrop from "./component/ImageZoomCrop";
+import ImageZoomCropReformated from "./component/ImageZoomCropReformated";
 
 function App() {
 	return (
 		<div className="App">
-			<ImageZoomCrop />
+			<ImageZoomCropReformated />
 		</div>
 	);
 }
