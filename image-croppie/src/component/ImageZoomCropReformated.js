@@ -106,19 +106,13 @@ class ImageZoomCropReformated extends Component {
 									width={250}
 									height={250}
 									borderRadius={125}
+									color={[255, 255, 255, 0.2]} // RGBA
 									image={this.state.image}
-									onMouseUp={() =>
-										console.log("onMouseUp() called")
-									}
+									onMouseUp={this.handleOnImageUpload}
 									onImageReady={e =>
 										console.log("onImageReady() invoked", e)
 									}
-									onLoadSuccess={imgInfo =>
-										console.log(
-											"onLoadSuccess() called with data:",
-											imgInfo
-										)
-									}
+									onLoadSuccess={this.handleOnImageUpload}
 									onImageChange={() =>
 										console.log(
 											"onImageChange() function called."
