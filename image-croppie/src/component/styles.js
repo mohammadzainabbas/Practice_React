@@ -8,6 +8,11 @@ export const styles = theme => ({
 	clearfix: {
 		marginBottom: theme.spacing(3)
 	},
+	parentDiv: {
+		height: 500,
+		width: 500,
+		margin: "250px auto 0"
+	},
 	defaultImage: {
 		backgroundImage: `url(${DefaultAvatar})`,
 		backgroundRepeat: "no-repeat",
