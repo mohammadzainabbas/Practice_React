@@ -29,7 +29,7 @@ class Media extends Component {
 
 const App = () => {
 	return (
-		<Media query="(max-width: 400px)">
+		<Media query="(max-width: 800px)">
 			{small => (
 				<Media query="(min-width: 800px)">
 					{large => (
