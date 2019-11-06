@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Example() {
+function Counter() {
 	// Declare a new state variable, which we'll call "count"
 	const [count, setCount] = useState(0);
 
@@ -11,3 +11,9 @@ function Example() {
 		</div>
 	);
 }
+
+const App = () => {
+	return <Counter />;
+};
+
+export default App;
