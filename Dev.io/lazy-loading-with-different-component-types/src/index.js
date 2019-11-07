@@ -1,5 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
 import App from "./components/App";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+fetch(`https://api.github.com/users/mohammadzainabbas/events/public`)
+	.then(response => response.json())
+	.then(events => {
+		render(<App events={events} />, document.getElementById("root"));
+	});
