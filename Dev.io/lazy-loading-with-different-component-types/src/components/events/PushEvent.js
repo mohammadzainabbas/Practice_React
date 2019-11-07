@@ -1,5 +1,5 @@
 import React from "react";
-import shortid from "shortid";
+import shortid from "short-id";
 
 const PushEvent = ({ created_at: eventDate, repo, org, actor, payload }) => {
 	const { display_login: login, url: actorURL } = actor;

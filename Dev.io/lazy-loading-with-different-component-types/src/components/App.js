@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from "react";
-import shortid from "shortid";
+import shortid from "short-id";
 import * as Events from "./events";
 
 import "./App.css";
