@@ -21,7 +21,7 @@ class App extends Component {
 						src={events.map(item => item)[0].actor.avatar_url}
 						alt={events.map(item => item)[0].actor.login}
 					/>
-					<h2>{events.map(item => item)[0].actor.login}'s GitHub Events</h2>
+					<h2 className="text">{events.map(item => item)[0].actor.login}'s GitHub Events</h2>
 				</div>
 				<div>{components}</div>
 			</Suspense>
