@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export const useUserInfo = profile_link => {
+export const useUserInfo = (profile_link = "mohammadzainabbas") => {
 	const [userInfo, setUserInfo] = useState(null);
 	useEffect(() => {
 		fetch(`https://api.github.com/users/${profile_link}`)
