@@ -16,9 +16,7 @@ const UserInfo = ({ profile_link }) => {
 	const userInfo = useUserInfo(profile_link);
 
 	if (!!userInfo) {
-		debugger;
 		const { avatar_url, name, location, bio, public_repos, followers, following } = userInfo;
-		debugger;
 		return (
 			<div className="profileDiv">
 				<img className="image" src={avatar_url} alt={name} />
