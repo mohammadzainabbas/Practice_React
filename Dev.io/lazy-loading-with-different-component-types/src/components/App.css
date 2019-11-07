@@ -12,11 +12,11 @@
 .profileDiv {
 	display: flex;
 }
-
+/* Style for image -> https://9elements.github.io/fancy-border-radius/ */
 .image {
-	border-radius: 100%;
 	width: 50px;
-	padding: 10px;
+	margin: 0.5em;
+	border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
 .text {
