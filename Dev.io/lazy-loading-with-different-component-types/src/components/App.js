@@ -1,7 +1,6 @@
 import React, { Component, Suspense } from "react";
 import shortid from "short-id";
 import * as Events from "./events";
-
 import "./App.css";
 
 class App extends Component {
@@ -16,7 +15,14 @@ class App extends Component {
 
 		return (
 			<Suspense fallback={<div>Loading...</div>}>
-				<h2>Sung's GitHub Events</h2>
+				<div className="profileDiv">
+					<img
+						className="image"
+						src={events.map(item => item)[0].actor.avatar_url}
+						alt={events.map(item => item)[0].actor.login}
+					/>
+					<h2>{events.map(item => item)[0].actor.login}'s GitHub Events</h2>
+				</div>
 				<div>{components}</div>
 			</Suspense>
 		);
