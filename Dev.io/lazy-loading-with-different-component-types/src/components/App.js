@@ -13,7 +13,6 @@ class App extends Component {
 
 			return Component ? <Component key={key} {...event} /> : <Events.NullEvent key={key} />;
 		});
-		debugger;
 
 		return (
 			<Suspense fallback={<div>Loading...</div>}>
