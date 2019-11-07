@@ -7,7 +7,7 @@ const PushEvent = ({ created_at: eventDate, repo, org, actor, payload }) => {
 	const { name: repoName, url: repoURL } = repo;
 
 	return (
-		<div class="event">
+		<div className="event">
 			<h3>
 				Push - (<small>{eventDate}</small>)
 			</h3>

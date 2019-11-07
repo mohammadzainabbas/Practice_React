@@ -4,7 +4,7 @@ const ForkEvent = ({ created_at: eventDate, repo, org, actor, payload }) => {
 	const { name: repoName, url: repoURL } = repo;
 
 	return (
-		<div class="event">
+		<div className="event">
 			<h3>
 				Fork - (<small>{eventDate.toString()}</small>)
 			</h3>
