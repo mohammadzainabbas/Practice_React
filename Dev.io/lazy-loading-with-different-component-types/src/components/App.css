@@ -12,6 +12,13 @@
 .profileDiv {
 	display: flex;
 }
+
+.profileDiv > p {
+	padding: 10px;
+	font-family: monospace;
+	font-weight: 600;
+	color: midnightblue;
+}
 /* Style for image -> https://9elements.github.io/fancy-border-radius/ */
 .image {
 	width: 50px;
