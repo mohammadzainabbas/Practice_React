@@ -2,7 +2,7 @@ import React, { Component, Suspense } from "react";
 import shortid from "short-id";
 import * as Events from "./events";
 import "./App.css";
-import UserInfo from "./customHooks/getUserInfo";
+import UserInfo from "./userInfo/UserInfo";
 
 class App extends Component {
 	render() {
