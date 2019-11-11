@@ -37,5 +37,4 @@ function SearchResults() {
 	);
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<SearchResults />, rootElement);
+export default SearchResults;
