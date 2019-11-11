@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 import axios from "axios";
 
 /**
@@ -37,4 +36,8 @@ function SearchResults() {
 	);
 }
 
-export default SearchResults;
+const App = () => {
+	return <SearchResults />;
+};
+
+export default App;
