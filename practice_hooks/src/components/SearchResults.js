@@ -13,7 +13,7 @@ function SearchResults() {
 		let ignore = false;
 
 		async function fetchData() {
-			const result = await axios("https://hn.algolia.com/api/v1/search?query=" + query);
+			const result = await axios(`https://hn.algolia.com/api/v1/search?query=${query}`);
 			if (!ignore) setData(result.data);
 		}
 
