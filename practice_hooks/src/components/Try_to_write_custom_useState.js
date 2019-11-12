@@ -25,15 +25,48 @@ const App = () => {
 
   return (
     <>
-      <div>
-        <button onClick={handleSubtract}>
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+          width: 500,
+          height: 500,
+          margin: "auto"
+        }}
+      >
+        <button
+          style={{
+            padding: 20
+          }}
+          onClick={handleSubtract}
+        >
           <FaMinus />
         </button>
-        <span>{`${minutes} minutes`}</span>
-        <button onClick={handleAdd}>
+        <span
+          style={{
+            padding: 20
+          }}
+        >{`${minutes} minutes`}</span>
+        <button
+          style={{
+            padding: 20
+          }}
+          onClick={handleAdd}
+        >
           <FaPlus />
         </button>
-        {error && <span>{error}</span>}
+        {error && (
+          <span
+            style={{
+              padding: 20
+            }}
+          >
+            {error}
+          </span>
+        )}
       </div>
     </>
   );
