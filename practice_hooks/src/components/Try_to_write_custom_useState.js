@@ -1,5 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
+/**
+ * Try to self-write useState hook (with Ryan Florence)
+ **/
+
+//To keep track of states
+const states = [];
+const useState = defaultValue => {
+  const setValue = newValue => {
+    defaultValue = newValue;
+    //Assign something
+    //Re-render
+  };
+  const tuple = [defaultValue, setValue];
+  states.push(tuple);
+  return tuple;
+};
 
 const App = () => {
   const [minutes, setMinutes] = useState(5);
@@ -28,18 +44,18 @@ const App = () => {
       <div
         style={{
           position: "absolute",
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
-          width: 500,
-          height: 500,
-          margin: "auto"
+          top: "50%",
+          left: "50%",
+          marginTop: -50,
+          marginLeft: -50,
+          width: 300,
+          height: 300
         }}
       >
         <button
           style={{
-            padding: 20
+            padding: 20,
+            borderRadius: "100%"
           }}
           onClick={handleSubtract}
         >
@@ -52,7 +68,8 @@ const App = () => {
         >{`${minutes} minutes`}</span>
         <button
           style={{
-            padding: 20
+            padding: 20,
+            borderRadius: "100%"
           }}
           onClick={handleAdd}
         >
