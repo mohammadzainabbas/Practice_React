@@ -6,14 +6,17 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 
 //To keep track of states
 const states = [];
+let calls = -1;
+
 const useState = defaultValue => {
+  const callId = ++calls;
   const setValue = newValue => {
-    defaultValue = newValue;
     //Assign something
+    states[callId][0] = newValue;
     //Re-render
   };
   const tuple = [defaultValue, setValue];
-  states.push(tuple);
+  states[callId] = tuple;
   return tuple;
 };
 
