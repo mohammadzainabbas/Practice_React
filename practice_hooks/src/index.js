@@ -4,7 +4,9 @@ import "./index.css";
 import App from "./components/Try_to_write_custom_useState";
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+export const renderWithCrappyHooks = () => {
+  ReactDOM.render(<App />, document.getElementById("root"));
+};
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

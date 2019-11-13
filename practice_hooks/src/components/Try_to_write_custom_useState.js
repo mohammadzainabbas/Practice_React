@@ -1,5 +1,6 @@
 import React from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import { renderWithCrappyHooks } from "./../index";
 /**
  * Try to self-write useState hook (with Ryan Florence)
  **/
@@ -13,7 +14,10 @@ const useState = defaultValue => {
   const setValue = newValue => {
     //Assign something
     states[callId][0] = newValue;
+    //Reset index
+    calls = -1;
     //Re-render
+    renderWithCrappyHooks();
   };
   const tuple = [defaultValue, setValue];
   states[callId] = tuple;
