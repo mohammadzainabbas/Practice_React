@@ -11,6 +11,9 @@ let calls = -1;
 
 const useState = defaultValue => {
   const callId = ++calls;
+  if (states[callId]) {
+    return states[callId];
+  }
   const setValue = newValue => {
     //Assign something
     states[callId][0] = newValue;
