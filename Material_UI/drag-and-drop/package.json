@@ -67,7 +67,7 @@
     "prettier": "1.19.1",
     "pretty-quick": "1.11.1",
     "react": "16.8.6",
-    "react-docgen-typescript": "1.12.5",
+    "react-docgen-typescript": "1.16.1",
     "react-dom": "16.8.6",
     "react-flexbox-grid": "2.1.2",
     "react-ga": "2.7.0",
