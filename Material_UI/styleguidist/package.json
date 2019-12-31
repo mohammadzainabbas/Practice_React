@@ -39,7 +39,7 @@
     "react-styleguidist": "9.2.0",
     "babel-loader": "8.0.6",
     "css-loader": "3.2.1",
-    "file-loader": "2.0.0",
+    "file-loader": "5.0.2",
     "style-loader": "0.23.1",
     "url-loader": "1.1.2",
     "@babel/core": "7.7.4",
