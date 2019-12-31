@@ -24,7 +24,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.20.1",
     "mongoose": "^5.6.1",
-    "winston": "^2.4.0",
+    "winston": "^3.0.0",
     "winston-mongodb": "^3.0.0"
   },
   "devDependencies": {
