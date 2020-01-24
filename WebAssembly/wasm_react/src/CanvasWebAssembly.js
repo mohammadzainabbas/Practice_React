@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 const wasm = import("./fractal.wasm");
 
-class Canvas extends Component {
+class CanvasWebAssembly extends Component {
 	constructor(props) {
 		super(props);
 		this.canvasRef = React.createRef();
@@ -36,4 +36,4 @@ class Canvas extends Component {
 	}
 }
 
-export default Canvas;
+export default CanvasWebAssembly;
