@@ -12,8 +12,6 @@ const wasm = `;;wasm
 
 iw(wasm).then(wasmModule => {
 	let arg = process.argv.slice(2);
-	const [num1, num2] = arg;
-	const sum = wasmModule.add(num1, num2);
+	const sum = arg.reduce((a, b) => wasmModule.add(Number(a), Number(b)), 0);
 	console.log(`Sum = ${sum}`);
-	// console.log(`Arguments -> `, process.argv);
 });
