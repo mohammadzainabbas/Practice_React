@@ -7,7 +7,7 @@ const CanvasWebAssembly = props => {
 
 	useEffect(() => {
 		wasm.then(wasm => {
-			const mandelIterWASM = wasm._Z10mandelIterffi;
+			const mandelIterWASM = wasm.mandelIter;
 			let canvas = canvasRef.current.getContext("2d");
 			let mag = 200;
 			let panX = 2;
