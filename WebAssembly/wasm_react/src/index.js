@@ -1,13 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import App from './App';
-
-const title = 'My Minimal React Webpack Babel Setup';
+import Canvas from "./Canvas";
+import CanvasWebAssembly from "./CanvasWebAssembly";
 
 ReactDOM.render(
-  <App title={title} />,
-  document.getElementById('app')
+	<>
+		<Canvas width={500} height={500} />
+		<CanvasWebAssembly width={500} height={500} />
+	</>,
+	document.getElementById("app")
 );
 
 module.hot.accept();
