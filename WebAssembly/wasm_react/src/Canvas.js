@@ -7,7 +7,18 @@ class Canvas extends Component {
 	}
 	componentDidMount() {
 		let canvas = this.canvasRef.current.getContext("2d");
-		canvas.fillRect(0, 0, 100, 100);
+		let mag = 200;
+		let panX = 2;
+		let panY = 1.25;
+		let maxIter = 100;
+
+		for (let x = 10; x < this.props.height; x++) {
+			for (let y = 10; y < this.props.width; y++) {
+				let m = this.mandelIter(x / mag - panX, y / mag - panY, maxIter);
+				canvas.fillStyle = m === 0 ? "#000" : "hsl(0, 100%, " + m + "%)";
+				canvas.fillRect(x, y, 1, 1);
+			}
+		}
 	}
 
 	mandelIter(x, y, maxIter) {
