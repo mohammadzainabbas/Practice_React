@@ -6,7 +6,7 @@
     "axios": "0.21.2",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "react-scripts": "3.4.4",
+    "react-scripts": "5.0.0",
     "react-toastify": "5.5.0",
     "@sentry/browser": "5.30.0",
     "bootstrap": "4.4.1"
