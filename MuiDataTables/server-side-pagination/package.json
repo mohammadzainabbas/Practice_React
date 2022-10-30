@@ -5,7 +5,7 @@
   "dependencies": {
     "@material-ui/core": "4.12.4",
     "@material-ui/icons": "4.11.3",
-    "mui-datatables": "2.15.0",
+    "mui-datatables": "4.2.2",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-scripts": "5.0.1"
