@@ -9,7 +9,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "9.1.1",
     "@sentry/browser": "7.21.1",
-    "bootstrap": "5.2.2"
+    "bootstrap": "5.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
