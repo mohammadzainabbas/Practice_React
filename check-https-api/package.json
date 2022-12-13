@@ -8,7 +8,7 @@
     "react-dom": "18.2.0",
     "react-scripts": "5.0.1",
     "react-toastify": "9.1.1",
-    "@sentry/browser": "7.24.1",
+    "@sentry/browser": "7.26.0",
     "bootstrap": "5.2.3"
   },
   "scripts": {
