@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "react-styleguidist": "13.0.0",
-    "babel-loader": "9.1.0",
+    "babel-loader": "9.1.2",
     "css-loader": "6.7.3",
     "file-loader": "6.2.0",
     "style-loader": "3.3.1",
