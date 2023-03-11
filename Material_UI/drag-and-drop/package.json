@@ -77,7 +77,7 @@
     "remcalc": "1.0.10",
     "style-loader": "3.3.1",
     "styled-components": "5.3.8",
-    "webpack": "5.76.0",
+    "webpack": "5.76.1",
     "webpack-cli": "5.0.1"
   }
 }
