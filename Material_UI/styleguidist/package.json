@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@mui/material": "5.0.0",
-    "@material-ui/icons": "4.11.3",
+    "@mui/icons-material": "5.0.0",
     "dog-names": "2.1.0",
     "lodash": "4.17.21",
     "prop-types": "15.8.1",
