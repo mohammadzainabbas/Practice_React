@@ -7,7 +7,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-dropzone": "14.2.3",
-    "react-image-crop": "10.0.11",
+    "react-image-crop": "10.1.4",
     "react-scripts": "5.0.1",
     "styled-components": "5.3.9"
   },
