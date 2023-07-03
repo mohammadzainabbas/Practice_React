@@ -9,7 +9,7 @@
     "react-dropzone": "14.2.3",
     "react-image-crop": "10.1.4",
     "react-scripts": "5.0.1",
-    "styled-components": "5.3.11"
+    "styled-components": "6.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
