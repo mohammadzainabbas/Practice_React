@@ -8,8 +8,8 @@
 		"react-dom": "18.2.0",
 		"react-dropzone": "14.2.3",
 		"react-scripts": "5.0.1",
-		"@mui/material": "5.13.6",
-		"@mui/icons-material": "5.11.16",
+		"@mui/material": "5.16.7",
+		"@mui/icons-material": "5.16.7",
 		"axios": "1.6.7"
 	},
 	"scripts": {
